@@ -39,13 +39,13 @@ impl Config {
         // $language=rust
 
         for arg in args {
-            println!("{}", arg);
+            // println!("{}", arg);
             if arg.starts_with("$") {
                 self.arg_pair.insert(
                     arg.get(1..arg.find("=").unwrap()).unwrap().to_string(),
                     arg.get(arg.find("=").unwrap() + 1..).unwrap().to_string(),
                 );
-                println!("{:#?}", self.arg_pair());
+                // println!("{:#?}", self.arg_pair());
             }
 
             // let arg_key_instert;

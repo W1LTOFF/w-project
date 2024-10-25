@@ -5,7 +5,7 @@ use std::io::Write;
 pub fn make_dir(path: &str) {
     let silent = false;
     if !silent {
-        println!()
+        // println!()
     }
 
     match fs::create_dir(path) {
@@ -18,6 +18,7 @@ pub fn make_dir(path: &str) {
 
 pub fn copy_dir(path: &str, copy_to: &str, conf: &config::Config) {
     make_dir(copy_to);
+    // println!("{}", path);
     let dir_items = fs::read_dir(path).unwrap();
 
     for item in dir_items {
@@ -36,6 +37,7 @@ pub fn copy_dir(path: &str, copy_to: &str, conf: &config::Config) {
                 //     .unwrap(),
                 &conf.arg_pair().get("project_name").unwrap(),
             );
+
             // println!("{:#?}\n", file);
             if fs::exists(format!(
                 "{}/{}",
